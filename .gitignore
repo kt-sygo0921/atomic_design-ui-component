@@ -1,0 +1,9 @@
+node_modules/
+
+app/release/css
+app/release/js
+app/view/css
+app/view/js
+app/view/html
+
+.idea/

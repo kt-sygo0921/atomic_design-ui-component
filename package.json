@@ -23,7 +23,8 @@
     "react": "15.6.2",
     "react-addons-perf": "^15.4.2",
     "react-dom": "15.6.2",
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "styled-jsx": "^2.2.7"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.2.16",

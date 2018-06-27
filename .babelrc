@@ -1,4 +1,4 @@
 {
   "presets": ["env", "react", "stage-0"],
-  "plugins": ["add-module-exports", "add-react-displayname"]
+  "plugins": ["add-module-exports", "add-react-displayname","styled-jsx/babel"]
 }
