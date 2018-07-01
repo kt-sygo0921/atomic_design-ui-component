@@ -23,9 +23,18 @@ const HeadingPresenter = ({
     visualLevel,
     className,
     ...props
-}) => (
-    <Tag className={[styles.h, styles[`h${visualLevel}`], className].join(' ')} {...props} />
-);
+}) => {
+    return <div>
+        <Tag className={`h`} {...props} />
+        <style jsx>{`
+            .h {
+                font-weight: 700;
+                line-height: 1.5;
+            }
+        `}
+        </style>
+    </div>
+};
 
 const HeadingContainer = ({
     presenter,
@@ -35,7 +44,8 @@ const HeadingContainer = ({
 }) => {
     level = Math.max(1, Math.min(6,level));
     visualLevel = (typeof visualLevel != 'undefined') ? visualLevel: level;
-    const tag = `h${level}`;
+    // const tag = `h${level}`;
+    const tag = 'h1';
     return presenter({tag, visualLevel, ...props});
 };
 
