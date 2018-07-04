@@ -1,31 +1,6 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styles from './styles';
-
-// const Heading =({
-//     children,
-//     level = 2,
-//     visualLevel,
-//     className,
-//     ...props
-// }) => {
-//     level = Math.max(0, Math.min(6,level));
-//     visualLevel = (typeof visualLevel !== 'undefined') ? visualLevel : level;
-//     const Tag = `h${level}`;
-//     const tagStyle = `${styles.h} ${styles[`h${visualLevel}`]}`;
-
-//     return (
-//         <Tag className={tagStyle}  {...props}>{children}</Tag>
-//     );
-// };
-
-const HeadingPresenter = ({
-    tag: Tag,
-    visualLevel,
-    className,
-    ...props
-}) => (
-    <Tag className={[styles.h, styles[`h${visualLevel}`], className].join(' ')} {...props} />
-);
+import styled from 'styled-components';
 
 const HeadingContainer = ({
     presenter,
@@ -39,8 +14,13 @@ const HeadingContainer = ({
     return presenter({tag, visualLevel, ...props});
 };
 
+const HeadingPresenter = styled(({tag,children, ...props}) => {
+    return React.createElement(tag, props, children);
+}) `color:red`
+
 const Heading = props => (
     <HeadingContainer presenter={presenterProps => <HeadingPresenter {...presenterProps} />}{...props}/>
 );
+
 
 export default Heading;
